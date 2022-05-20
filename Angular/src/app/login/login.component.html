@@ -1,0 +1,38 @@
+<body>
+    <marquee direction = "Right"
+        style = "background-color: crimson; color:azure; font-family:papyrus; font-size: 150%;
+        margin-top:50px">
+        Washington State University
+    </marquee>
+</body>
+
+<!--<a href = "home">
+  <input type = "submit" value = "subBut">
+</a>-->
+
+<!-- currently trying to not allow the user to press login and go to the home page  -->
+<form action="home" method="post">
+    <div class="container">
+      
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" id="uname" name="uname" #uname required>
+      
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="psw" name="psw" #psw required>
+      
+      <p hidden="true" id="failtext" style="color: red"><strong>username or password is incorrect.</strong></p>
+
+      <a routerLink = "/home">
+      <button hidden="true" name="submitButton" id="submitButton" type="submit" value = "subButton" #submitButton>Login</button>
+      </a>
+
+
+      <!-- this is a temp button that correctly routes us to a new page and clears the previous components -->
+      <div class ="content" role = "main">
+        <button hidden="true" (click) = "goToPage('home')"> Goto home page</button>
+      </div>
+    </div>
+
+</form>
+
+<button (click) = "libAuth(uname.value, psw.value)">Authenticate user</button>

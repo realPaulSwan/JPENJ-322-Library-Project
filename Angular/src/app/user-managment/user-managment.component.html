@@ -1,0 +1,66 @@
+<body>
+  <marquee direction = "Right"
+      style = "background-color: crimson; color:azure; font-family:papyrus; font-size: 150%;
+      margin-top:50px">
+      Washington State University
+  </marquee>
+  <button (click) = "goToPage('home')">Back</button>
+  <br><br><br>
+
+
+
+  <!-- <body> -->
+    <!-- <p>Add a New Book:</p> -->
+    <!-- <input type="text" id="titleText" name="titleText" placeholder="Enter title" #titleText required> -->
+    <!-- <input type="text" id="authorText" name="authorText" placeholder="Enter author" #authorText required> -->
+    <!-- <input type="text" id="genreText" name="genreText" placeholder="Enter genre" #genreText required> -->
+    <!-- <input type="text" id="descText" name="descText" placeholder="Enter description" #descText required> -->
+    <!-- <button (click)="pushNewBook(titleText.value, authorText.value, genreText.value, descText.value)">Add a book</button> -->
+    <!-- </body> -->
+
+
+    <div class="grid">
+      <div>Add a Student <br>
+        <input type="text" id="fname" name="fText" placeholder="Enter first name" #fText required> 
+        <input type="text" id="lname" name="lText" placeholder="Enter last name" #lText required> 
+        <button (click)="pushNewStudent(fText.value, lText.value)">Create New Student</button>
+      </div>
+
+<br><br><br><br><br><br><br>
+
+      <div> <br><br><br> Add a Librarian <br>
+        <input type="text" id="fname_lib" name="f_libText" placeholder="Enter first name" #f_libText required> 
+        <input type="text" id="lname_lib" name="l_libText" placeholder="Enter last name" #l_libText required>
+        <input type="text" id="uname_lib" name="u_libText" placeholder="Enter user name" #u_libText required> 
+        <input type="text" id="psw_lib" name="psw_Text" placeholder="Enter new password" #psw_Text required> 
+ 
+        <button (click)="pushNewLibrarian(f_libText.value, l_libText.value, u_libText.value, psw_Text.value )">Create New Librarian</button>
+      </div>
+
+      <div>Currently Registered Students <br>
+        <button (click)="getStudents()">Get Students</button>
+        <p *ngFor="let item of students">{{item.first_name}}  {{item.last_name}}</p>
+
+        <br><br><br><br><br><br><br><br> Currently Registered Librarians <br>
+        <button (click)="getLibrarians()">Get Librarians</button>
+        <p *ngFor="let item of librarians">{{item.first_name}}  {{item.last_name}}</p>
+      </div>
+  </div>
+
+
+  <!-- <div class="grid">
+      <div>Add a Student or Librarian <br>
+        <button (click)="pushNewStudent()">Create New Student</button>
+        <button (click)="pushNewLibrarian()">Create New Librarian</button>
+      </div>
+
+      <div>Currently Registered Students <br>
+        <button (click)="getStudents()">Get Students</button>
+        <p *ngFor="let item of students">{{item.first_name}}  {{item.last_name}}</p>
+
+        <br><br><br><br><br><br><br><br> Currently Registered Librarians <br>
+        <button (click)="getLibrarians()">Get Librarians</button>
+        <p *ngFor="let item of librarians">{{item.first_name}}  {{item.last_name}}</p>
+      </div>
+  </div> -->
+</body>

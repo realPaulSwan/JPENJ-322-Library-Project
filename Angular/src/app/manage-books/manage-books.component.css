@@ -1,0 +1,6 @@
+/* .butto{
+  background-color: gray;
+} */
+.butto:hover{
+  cursor:pointer;
+}

@@ -1,0 +1,92 @@
+
+
+<style>
+  /* Style The Dropdown Button */
+  .dropbtn {
+    background-color: crimson;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+
+  /* The container <div> - needed to position the dropdown content */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right:0;
+  }
+
+  /* Dropdown Content (Hidden by Default) */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  /* Links inside the dropdown */
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* Change color of dropdown links on hover */
+  .dropdown-content a:hover {background-color: #f1f1f1}
+
+  /* Show the dropdown menu on hover */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  /* Change the background color of the dropdown button when the dropdown content is shown */
+  .dropdown:hover .dropbtn {
+    background-color: gray;
+  }
+  </style>
+
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a routerLink="/user-management">Manage Users</a>
+      <a routerLink = "/login">Sign out</a>
+      <a href="https://github.com/Joshua-Konop/JPENJ-322-Library-Project">Github</a>
+      <a href="https://www.linkedin.com/in/evan-a-smith/">LinkedIn</a>
+    </div>
+  </div>
+<body>
+  <marquee direction = "Right"
+      style = "background-color: crimson; color:azure; font-family:papyrus; font-size: 150%;
+      margin-top:50px">
+      Washington State University
+  </marquee>
+</body>
+
+
+<table border = "2" hidden = "true" id = "bookTable" >
+  <thead style = "background-color: gray;">                                           <!--thead makes the first row, this is the header of the table -->
+    <tr style = "color: crimson; font-family: papyrus; font-size: 15px;">             <!--tr makes text bold this is used for the header row at the top -->
+      <th>Title</th>                                                                    <!-- <th> makes data cell and makes text bold -->
+      <th>Author</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+                  <!--tbody means the body of the table -->
+  <tbody>
+    <tr *ngFor = "let item of items">
+      <!--td makes a data cell graphic -->
+      <td>{{item.title}}</td>
+      <td>{{item.author}}</td>
+      <td>{{item.book_status}}</td>
+    </tr>
+  </tbody>
+</table> 
+
+<!-- <p>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</p> --> 
+<button (click)= "goToPage('manage-books')">Manage Books</button>
+<button (click)="searchBooks()">Search books</button>

@@ -1,0 +1,16 @@
+<button class = "butto" (click)="goToPage('home')">Back To Book Search</button>
+
+<marquee direction = "Right"
+style = "background-color: crimson; color:azure; font-family:papyrus; font-size: 150%;
+margin-top:50px">
+Washington State University
+</marquee>
+
+<body>
+<p>Add a New Book:</p>
+<input type="text" id="titleText" name="titleText" placeholder="Enter title" #titleText required>
+<input type="text" id="authorText" name="authorText" placeholder="Enter author" #authorText required>
+<input type="text" id="genreText" name="genreText" placeholder="Enter genre" #genreText required>
+<input type="text" id="descText" name="descText" placeholder="Enter description" #descText required>
+<button (click)="pushNewBook(titleText.value, authorText.value, genreText.value, descText.value)">Add a book</button>
+</body>
